@@ -46,4 +46,5 @@ on
 
 ```
 when we login with administrator,access to link,http://192.168.3.216/Z-Blog/zb_system/admin/index.php?act=UploadMng,the Js code successfully executed.
+Attackers can exploit this vulnerability to obtain import information such as administrator cookies.
 ![]()
