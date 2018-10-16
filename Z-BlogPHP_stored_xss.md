@@ -4,12 +4,14 @@ Z-BlogPHP 1.5.2.1935 (Zero) Download link:https://www.zblogcn.com/zblogphp
 
 ## Vulnerability location
 zb_system/function/c_system_admin.php  in 1237 line.
-![]()
+![](https://github.com/seedis/Z-BlogPHP/blob/master/images/1.png)
 
 ## Vulnerability trigger condition
-login with a author's privilege account
+exploit the vulnerability via logiing with a author's privilege account then trigger the vulnerability when admin logins in   and accesses the  zb_system/admin/index.php?act=UploadMng page
 ## POC 
-edit Content-Type param value:<script>alert(document.cookie)</script>,then forward it.
+logiing with a author's privilege account
+![](https://github.com/seedis/Z-BlogPHP/blob/master/images/2.png)
+ edit Content-Type param value:<script>alert(document.cookie)</script> When uploading an attachment,then forward it.
 ```
 POST /Z-Blog/zb_system/cmd.php?act=UploadPst&csrfToken=5fb877f1b3051a92b4c2f6809354caa5 HTTP/1.1
 Host: 192.168.3.216
@@ -45,6 +47,8 @@ on
 -----------------------------61109570014186299461550053428--
 
 ```
+![](https://github.com/seedis/Z-BlogPHP/blob/master/images/3.png)
 when we login with administrator,access to link,http://192.168.3.216/Z-Blog/zb_system/admin/index.php?act=UploadMng,the Js code successfully executed.
+![](https://github.com/seedis/Z-BlogPHP/blob/master/images/4.png)
 Attackers can exploit this vulnerability to obtain import information such as administrator cookies.
-![]()
+
